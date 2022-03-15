@@ -22,6 +22,7 @@ const products = [
   }
 ]
 
+// here we take how all the products gonna look we use the grid system of material ui
 
 const Products = () => {
   return (

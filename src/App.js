@@ -29,8 +29,6 @@ const App = () => {
     fetchCart();
   });
 
-  console.log(cart);
-
   return (
     <div>
       <Navbar totalItem={[cart.total_items]} />

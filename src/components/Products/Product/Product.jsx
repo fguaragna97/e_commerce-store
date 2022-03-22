@@ -6,7 +6,7 @@ import useStyles from "./styles"
 
 // here we create what each product is gonna look in the grid 
 
-function Product({product}) {
+function Product({product,onAddToCart}) {
   const classes = useStyles()
   console.log(product.image.url)
   return (
@@ -27,7 +27,7 @@ function Product({product}) {
       </CardContent>
 
       <CardActions disableSpacing className={classes.cardActions}>
-          <IconButton aria-label="Add to Cart">
+          <IconButton aria-label="Add to Cart" onClick={()=> onAddToCart(product.id,1)}>
             <AddShoppingCart />
             </IconButton>
 

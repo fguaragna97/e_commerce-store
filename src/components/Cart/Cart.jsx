@@ -42,7 +42,7 @@ function Cart(cart) {
   return (
     <Container>
       < div className={classes.toolbar}/>
-      <Typography className={classes.tittle} variant="h3">Your Shopping Cart</Typography>
+      <Typography className={classes.tittle} variant="h3" gutterBottom>Your Shopping Cart</Typography>
       {!cart.cart[0].total_items ? <EmptyCart /> : <FilledCart />}
     </Container>
   )

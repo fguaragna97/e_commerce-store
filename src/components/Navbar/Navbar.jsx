@@ -4,7 +4,7 @@ import { CallMissedSharp, ShoppingCart } from '@material-ui/icons'
 import { Link , useLocation } from 'react-router-dom'
 
 // import the logo of the commerce 
-import logo from "../../assets/download.png"
+import logo from "../../assets/360_F_232742698_HXvPlIXtt2FdshWwiuDyslaycN7COpPW.jpeg"
 
 import useStyles from "./style"
 
@@ -19,7 +19,7 @@ const Navbar = (totalItem) => {
       <AppBar position='fixed' className={classes.appbar} color="inherit">
         <Toolbar>
           <Typography component={Link} to="/" variant='h6' className={classes.title} color="inherit">
-            <img src={logo} alt="Commerce.js" height="25px" className={classes.image}/> Commerce.js 
+            <img src={logo} alt="Commerce.js" height="25px" className={classes.image}/> Best Snowboard Store 
           </Typography>
           <div  className={classes.grow}/>
             {location.pathname==="/"&&(

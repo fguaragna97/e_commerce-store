@@ -3,23 +3,23 @@ import {Typography, Button,Card,CardActions,CardContent,CardMedia} from "@materi
 
 import useStyles from "./styles"
 
-function CartItem(item) {
-  console.log(item.item)
+function CartItem({item, handleUpdateCartQty,handleRemoveFromCart}) {
+  
   const classes=useStyles()
   return (
     <Card>
-      <CardMedia image={item.item.image.url} alt={item.item.name} className={classes.media}/>
+      <CardMedia image={item.image.url} alt={item.name} className={classes.media}/>
       <CardContent className={classes.cardContent}>
-        <Typography variant='h4' >{item.item.name}</Typography>
-        <Typography variant='h5' >{item.item.price.formatted_with_symbol}</Typography>
+        <Typography variant='h4' >{item.name}</Typography>
+        <Typography variant='h5' >{item.price.formatted_with_symbol}</Typography>
         </CardContent>
         <CardActions className={classes.cardActions}>
           <div className={classes.buttons}>
-            <Button type="button" size='small'>-</Button>
-            <Typography>{item.item.quantity}</Typography>
-            <Button type="button" size='small'>+</Button>
+            <Button type="button" size='small' onClick={()=>handleUpdateCartQty(item.id ,item.quantity - 1)}>-</Button>
+            <Typography>{item.quantity}</Typography>
+            <Button type="button" size='small' onClick={()=>handleUpdateCartQty(item.id ,item.quantity + 1)}>+</Button>
           </div>
-          <Button variant='contained' type='button' color='secondary'>Remove</Button>
+          <Button variant='contained' type='button' color='secondary' onClick={() => handleRemoveFromCart(item.id)}>Remove</Button>
         </CardActions>
     </Card>
   )
